@@ -8,7 +8,10 @@ const engine = require("ejs-mate");
 const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+
+require("dotenv").config();
+
+const MONGO_URL = process.env.MONGO_URI;
 
 main()
   .then(() => {
@@ -121,6 +124,8 @@ app.use((err, req, res, next) => {
   res.send("something went wrong");
 });
 
-app.listen(8080, () => {
-  console.log("server is listning to port 8080");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+ console.log(`server running on ${PORT}`);
 });
