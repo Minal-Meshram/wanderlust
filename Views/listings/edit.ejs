@@ -1,139 +1,27 @@
-<% layout("layouts/boilerplate") %>
-
-<div class="row mt-4">
-
-    <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1">
-
-        <div class="new-listing-card">
-
-            <h1 class="mb-4">
-                Edit your Listing
-            </h1>
-
-            <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" novalidate class="needs-validation">
-
-                <div class="mb-3">
-
-                    <label class="form-label">
-                        Description
-                    </label>
-
-                    <textarea
-                        name="description"
-                        class="form-control"
-                        rows="4"
-                        required
-                    ><%= listing.description %> </textarea>
-
-                    <div class="invalid-feedback">
-                        Please enter a description for your listing.
-                    </div>
-                    <div class="valid-feedback">
-                        Description Looks good!
-                    </div>
-                </div>
-
-
-                <div class="mb-3">
-
-                    <label class="form-label">
-                        Image URL/Link
-                    </label>
-
-                    <input
-                        type="text"
-                        name="image"
-                        value="<%= listing.image %>"
-                        class="form-control"
-                          required
-                    >
-
-                    <div class="invalid-feedback">
-                        Please enter an image URL/Link for your listing.
-                </div>
-
-
-
-                <div class="row">
-
-                    <div class="col-md-4 mb-3">
-
-                        <label class="form-label">
-                            Price
-                        </label>
-
-                        <input
-                            type="number"
-                            name="price"
-                            value="<%= listing.price %>"
-                            class="form-control"
-                              required
-                        >
-                        <div class="invalid-feedback">
-                            Please enter a price for your listing.
-                        </div>
-                        <div class="valid-feedback">
-                            Price Looks good!
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-8 mb-3">
-
-                        <label class="form-label">
-                            Country
-                        </label>
-
-                        <input
-                            type="text"
-                            name="country"
-                            value="<%= listing.country %>"
-                            class="form-control"
-                            required
-                        >
-                        <div class="invalid-feedback">
-                            Please enter a country for your listing.
-                        </div>
-                        <div class="valid-feedback">
-                            Country Looks good!
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-                <div class="mb-4">
-
-                    <label class="form-label">
-                        Location
-                    </label>
-
-                    <input
-                        type="text"
-                        name="location"
-                        value="<%= listing.location %>"
-                        class="form-control"
-                          required
-                    >
-                     <div class="invalid-feedback">
-                           Please enter a location for your listing.
-                        </div>
-                        <div class="valid-feedback">
-                            Location Looks good!
-                        </div>
-                </div>
-
-
-                <button class="btn add-btn">
-                    Edit
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</div>
-<script  src="/js/script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Edit Listing</title>
+</head>
+<body>
+     <h3>Edit your Listing</h3>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST">
+        
+      <input type="text" name="title" value="<%= listing.title %>" type="text"/>
+      <br/> <br>
+      <textarea name="description" ><%= listing.description %></textarea>
+      <br /> <br>
+      <input type="text" name="image" value="<%= listing.image %>" />
+      <br /> <br>
+      <input type="number" name="price" value="<%= listing.price %>" type="number" />
+      <br /><br>
+      <input type="text" name="country" value="<%= listing.country %>" type="text" />
+      <br><br>
+      <input type="text" name="location" value="<%= listing.location %>" type="text" />
+      <br><br>
+      <button>Edit</button>
+    </form>
+</body>
+</html>
