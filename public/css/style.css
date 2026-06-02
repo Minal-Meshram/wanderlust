@@ -280,3 +280,28 @@ body{
     background:#e63946 !important;
 }
 
+.hero {
+    height: 80vh;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.stats {
+    background-color: #f8f9fa;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
