@@ -1,20 +1,67 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    
+    <a class="navbar-brand" href="/">
+      <i class="fa-regular fa-compass"></i>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-      
-          <a class="nav-link  href="/">Home</a>
-        
-          <a class="nav-link" href="/listings">All Listings</a>
-        
-          <a class="nav-link" href="/listings/new">Add New Listings</a>
-      
+
+      <!-- Left Menu -->
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <i class="fa-solid fa-house me-1"></i>Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">
+            <i class="fa-solid fa-list me-1"></i>All Listings
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">
+            <i class="fa-solid fa-plus me-1"></i>Add Listing
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/favorites">
+            <i class="fa-regular fa-heart me-1"></i>Favorites
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">
+            <i class="fa-regular fa-envelope me-1"></i>Contact
+          </a>
+        </li>
+
       </ul>
+
+      <!-- Right Side -->
+      <div class="d-flex">
+        <a href="/login" class="btn btn-outline-dark me-2">
+          Login
+        </a>
+
+        <a href="/register" class="btn btn-dark">
+          Register
+        </a>
+      </div>
+
     </div>
   </div>
 </nav>
