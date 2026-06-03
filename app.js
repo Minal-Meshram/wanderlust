@@ -6,13 +6,14 @@ const Chat = require("./models/chats.js");
 const path = require("path");
 const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
-const WrapAsync = require("./utils/wrapasync.js");
+const WrapAsync = require("./utils/WrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema } = require("./schema.js");
 
 require("dotenv").config();
 // MongoDB Connection
-const MONGO_URL = process.env.MONGO_URI;
+const MONGO_URL =
+  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/wanderlust";;
 main()
   .then(() => {
     console.log("Connected to DB");
