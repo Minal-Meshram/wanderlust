@@ -12,6 +12,26 @@
 
             <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" novalidate class="needs-validation">
 
+                <!-- Title -->
+                <div class="mb-3">
+                    <label class="form-label">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        name="listing[title]"
+                        value="<%= listing.title %>"
+                        class="form-control"
+                        required
+                    >
+
+                    <div class="invalid-feedback">
+                        Please enter a title.
+                    </div>
+                </div>
+
+                <!-- Description -->
                 <div class="mb-3">
 
                     <label class="form-label">
@@ -19,21 +39,23 @@
                     </label>
 
                     <textarea
-                        name="description"
+                        name="listing[description]"
                         class="form-control"
                         rows="4"
                         required
-                    ><%= listing.description %> </textarea>
+                    ><%= listing.description %></textarea>
 
                     <div class="invalid-feedback">
                         Please enter a description for your listing.
                     </div>
+
                     <div class="valid-feedback">
                         Description Looks good!
                     </div>
+
                 </div>
 
-
+                <!-- Image -->
                 <div class="mb-3">
 
                     <label class="form-label">
@@ -42,20 +64,21 @@
 
                     <input
                         type="text"
-                        name="image"
+                        name="listing[image]"
                         value="<%= listing.image %>"
                         class="form-control"
-                          required
+                        required
                     >
 
                     <div class="invalid-feedback">
                         Please enter an image URL/Link for your listing.
+                    </div>
+
                 </div>
-
-
 
                 <div class="row">
 
+                    <!-- Price -->
                     <div class="col-md-4 mb-3">
 
                         <label class="form-label">
@@ -64,20 +87,23 @@
 
                         <input
                             type="number"
-                            name="price"
+                            name="listing[price]"
                             value="<%= listing.price %>"
                             class="form-control"
-                              required
+                            required
                         >
+
                         <div class="invalid-feedback">
                             Please enter a price for your listing.
                         </div>
+
                         <div class="valid-feedback">
                             Price Looks good!
                         </div>
+
                     </div>
 
-
+                    <!-- Country -->
                     <div class="col-md-8 mb-3">
 
                         <label class="form-label">
@@ -86,23 +112,25 @@
 
                         <input
                             type="text"
-                            name="country"
+                            name="listing[country]"
                             value="<%= listing.country %>"
                             class="form-control"
                             required
                         >
+
                         <div class="invalid-feedback">
                             Please enter a country for your listing.
                         </div>
+
                         <div class="valid-feedback">
                             Country Looks good!
                         </div>
+
                     </div>
 
                 </div>
 
-
-
+                <!-- Location -->
                 <div class="mb-4">
 
                     <label class="form-label">
@@ -111,19 +139,21 @@
 
                     <input
                         type="text"
-                        name="location"
+                        name="listing[location]"
                         value="<%= listing.location %>"
                         class="form-control"
-                          required
+                        required
                     >
-                     <div class="invalid-feedback">
-                           Please enter a location for your listing.
-                        </div>
-                        <div class="valid-feedback">
-                            Location Looks good!
-                        </div>
-                </div>
 
+                    <div class="invalid-feedback">
+                        Please enter a location for your listing.
+                    </div>
+
+                    <div class="valid-feedback">
+                        Location Looks good!
+                    </div>
+
+                </div>
 
                 <button class="btn add-btn">
                     Edit
@@ -136,4 +166,5 @@
     </div>
 
 </div>
-<script  src="/js/script.js"></script>
+
+<script src="/js/script.js"></script>

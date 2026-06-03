@@ -38,10 +38,14 @@ app.use(methodOverride("_method"));
 
 // Validation Middleware
 const validateListing = (req, res, next) => {
+  console.log("BODY =>", req.body);
+
   let { error } = listingSchema.validate(req.body);
 
   if (error) {
     let msg = error.details.map((el) => el.message).join(",");
+    console.log("VALIDATION ERROR =>", msg);
+
     throw new ExpressError(msg, 400);
   } else {
     next();
